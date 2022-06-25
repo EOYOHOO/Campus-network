@@ -24,7 +24,6 @@ make menuconfig
 # 勾选上ua2f
 # network->Routing and Redirection->ua2f
 # 选上模块
-
 # network->firewall->iptables-mod-filter
 # network->firewall->iptables-mod-ipopt
 # network->firewall->iptables-mod-u32

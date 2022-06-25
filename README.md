@@ -10,8 +10,8 @@ Flash Cookie 检测技术（iptables 拒绝 AC 进行 Flash 检测 不常用）
 
 ```
 #有编译openwrt环境后，加入UA2F模块和RKP-IPID模块
-git clone https://github.com/Zxilly/UA2F.git package/UA2F
-git clone https://github.com/CHN-beta/rkp-ipid.git package/rkp-ipid
+git clone https://github.com/EOYOHOO/UA2F.git package/UA2F
+git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
  
 #在openwrt目录下
 nano .config

@@ -23,6 +23,7 @@ nano .config
 #加入一句
 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 # 选上模块
+make menuconfig
 # network->firewall->iptables-mod-filter
 # network->firewall->iptables-mod-ipopt
 # network->firewall->iptables-mod-u32

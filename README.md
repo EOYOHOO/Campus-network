@@ -12,17 +12,16 @@ Flash Cookie 检测技术（iptables 拒绝 AC 进行 Flash 检测 不常用）
 #有编译openwrt环境后，加入UA2F模块和RKP-IPID模块
 git clone https://github.com/EOYOHOO/UA2F.git package/UA2F
 git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
- 
-#在openwrt目录下
-nano .config
-#加入一句
-CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 ```
 
 ```
 make menuconfig
 # 勾选上ua2f
 # network->Routing and Redirection->ua2f
+#在openwrt目录下
+nano .config
+#加入一句
+CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 # 选上模块
 # network->firewall->iptables-mod-filter
 # network->firewall->iptables-mod-ipopt

@@ -18,6 +18,8 @@ git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
 make menuconfig
 # 勾选上ua2f
 # network->Routing and Redirection->ua2f
+# 勾选上ipid
+# kernel-modules->Other modules->kmod-rkp-ipid
 #在openwrt目录下
 nano .config
 #加入一句

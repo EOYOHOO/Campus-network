@@ -123,11 +123,8 @@ UA2F配置
 uci set ua2f.enabled.enabled=1
 # 自动配置防火墙（默认开启）（建议开启）
 uci set ua2f.firewall.handle_fw=1
-# 自动配置防火墙（默认开启）（建议开启）
 uci set ua2f.firewall.handle_tls=1
-# 自动配置防火墙（默认开启）（建议开启）
 uci set ua2f.firewall.handle_mmtls=1
-# 自动配置防火墙（默认开启）（建议开启）
 uci set ua2f.firewall.handle_intranet=1
 # 保存配置
 uci commit ua2f

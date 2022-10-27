@@ -3,7 +3,7 @@
 
 基于 IPv4 数据包包头内的 TTL 字段的检测（固定TTL）  
 基于 HTTP 数据包请求头内的 User-Agent 字段的检测(UA2F)  
-DPI (Deep Packet Inspection) 深度包检测技术）（不常用）  
+DPI (Deep Packet Inspection) 深度包检测技术）（极耗费学校设备性能 不一定开启）（不常用 需要加密解密服务器，代价过大 如果学校使用这种方法，那没辙了）  
 基于 IPv4 数据包包头内的 Identification 字段的检测（rkp-ipid 设置 IPID）  
 基于网络协议栈时钟偏移的检测技术（防时钟偏移检测）  
 Flash Cookie 检测技术（iptables 拒绝 AC 进行 Flash 检测 不常用）  
@@ -45,7 +45,7 @@ make -j$(nproc)
 默认登陆IP 192.168.1.1 密码 password  
 https://wwm.lanzoub.com/ipXzi06wvpmh  
 **////////////////////////////////////////////////////////////////////////////////////////////////**  
-**注意：**我编译的时候把TurboACC编译进去了，记得把这个关闭或卸载，这个开启会导致User-Agent 字段修改失效  
+**注意：**我编译的时候把TurboACC编译进去了，记得把这个Flow Offloading 技术关闭，这个开启会导致User-Agent 字段修改失效  
 由于微信mmtls协议的影响，会可能会导致微信图片无法发送等问题，此问题可执行 uci set ua2f.firewall.handle_mmtls=0 && uci commit ua2f 解决  
   
 刷入之后进行  
@@ -105,7 +105,7 @@ iptables -t nat -A ntp_force_local -d 192.168.0.0/16 -j RETURN
 
 iptables -t nat -A ntp_force_local -s 192.168.0.0/16 -j DNAT --to-destination 192.168.1.1
 
-# 通过 iptables 修改 TTL 值
+# 通过 iptables 修改 TTL 值 数字为需要的修改的ttl值
 
 iptables -t mangle -A POSTROUTING -j TTL --ttl-set 64
 
@@ -145,7 +145,7 @@ service ua2f stop
 如果你的真实UA是(服务器获取的UA)显示（两个端口都是）：  
 
 ```
-Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 ```
 
 说明配置正确，一个宿舍变可用一台路由器加一个账号上网  
